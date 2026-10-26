@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f1eb">
+  <meta name="description" content="Сюрприз">
+  <title>Сюрприз</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/game.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span></span>
+    </header>
+
+    <section class="screen intro-screen active" id="intro" aria-labelledby="intro-title">
+      <div class="eyebrow">ДОРОГАЯ КСЮША!</div>
+      <h1 id="intro-title">Собери<br><span>всех обьезьян.</span></h1>
+      <p class="intro-copy">Тебе нужно собрать всех обезьянок, до момента пока не закончится время.<br>После этого тебя ждет небольшой сюрприз :)</p>
+      <div class="preview-hearts" aria-hidden="true">
+        <span class="heart heart-one">🐒</span>
+        <span class="heart heart-two">🐵</span>
+        <span class="heart heart-three">🙉</span>
+      </div>
+      <button class="button button-dark" id="start-button">Начать ловить обезьян <span aria-hidden="true">↗</span></button>
+      <p class="tiny-note"></p>
+    </section>
+
+    <section class="screen game-screen" id="game" aria-labelledby="game-title" hidden>
+      <div class="game-heading">
+        <div>
+          <div class="eyebrow">Уровень 01</div>
+          <h2 id="game-title">Слови всех обезьян.</h2>
+        </div>
+        <div class="timer" aria-label="Verbleibende Zeit"><span id="time">20</span><small>СЕК.</small></div>
+      </div>
+      <div class="stats">
+        <div><span class="stat-label">ПУНКТЫ</span><strong id="score">00</strong></div>
+        <div class="goal-label">ЦЕЛЬ: <strong>15</strong> 🐒</div>
+      </div>
+      <div class="play-area" id="play-area" aria-label="Окно игры. Нажимай на обезьян, чтобы собрать пункты.">
+        <div class="game-hint" id="game-hint">Нажимай на обезьян, чтобы их словить!</div>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+      <p class="game-footer"></p>
+    </section>
+
+    <section class="screen result-screen" id="result" aria-labelledby="result-title" hidden>
+      <div class="result-icon" aria-hidden="true">✳</div>
+      <div class="eyebrow" id="result-eyebrow">Ксюша!</div>
+      <h2 id="result-title">Поздравляю!</h2>
+      <p id="result-copy">Ты словила всех обезьян! Молодец! Тебя ждет подарок!</p>
+      <button class="button button-dark" id="reveal-button">Открыть сюрприз <span aria-hidden="true">↗</span></button>
+      <p class="tiny-note"></p>
+    </section>
+
+    <section class="screen voucher-screen" id="voucher" aria-labelledby="voucher-title" hidden>
+      <div class="eyebrow">КСЮША ЭТО ДЛЯ ТЕБЯ</div>
+      <div class="voucher-stamp" aria-hidden="true">🤗</div>
+      <h2 id="voucher-title">Пусть это немгного скрасит<br><span>твою паузу после терминов😁</span></h2>
+      <p class="voucher-copy">Надеюсь с чем-то вкусненьким ты сможешь легче разжать челюсь после стресса🤗</p>
+      <div class="voucher-value"><span>ТВОЙ ГУТШАЙН LIFERANDO</span><strong>15 €</strong><small>НА ЧТО-ТО ВКУСНОЕ</small></div>
+      <p class="voucher-note">Ты можешь заказать то что любишь, и пойти забрать лично или заказать доставку на адрес. Как пользоваться им, ты узнаешь, нажав на кнопку ниже</p>
+      <a class="button dark download-button" href="assets/gutschein.pdf" download="Gutschein.pdf">
+        Скачать гутшайн
+        <span aria-hidden="true">↓</span>
+      </a>
+      <button class="button button-outline" id="again-button">Еще раз сыграть ↻</button>
+    </section>
+
+<footer class="site-footer">
+  <span></span>
+
+  <button class="footer-star" id="openPhotoModal" aria-label="Foto öffnen" type="button">
+    ✳
+  </button>
+</footer>
+
+<!-- Photo modal -->
+<div class="photo-modal" id="photoModal" aria-hidden="true">
+  <div class="photo-modal__backdrop" id="closePhotoModal"></div>
+
+  <div class="photo-modal__content" role="dialog" aria-modal="true" aria-label="">
+    <button class="photo-modal__close" id="closePhotoButton" aria-label="Schließen" type="button">
+      ×
+    </button>
+
+    <img src="assets/prikol.jpg" alt="" class="photo-modal__image">
+  </div>
+</div>
+  </main>
+</body>
+</html>
